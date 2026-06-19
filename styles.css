@@ -721,6 +721,50 @@ a {
   padding-bottom: 2rem;
 }
 
+.blog-embed-page .blog-page {
+  padding-bottom: 1rem;
+}
+
+.blog-embed-section {
+  padding: 1.25rem;
+  background:
+    linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(168, 85, 247, 0.06)),
+    rgba(255, 255, 255, 0.92);
+}
+
+.blog-embed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog-embed-header h1 {
+  margin: 0.15rem 0 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 400;
+}
+
+.notion-embed-wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  min-height: 78vh;
+}
+
+.notion-embed {
+  display: block;
+  width: 100%;
+  min-height: 78vh;
+  height: calc(100vh - 12rem);
+  border: 0;
+  background: #fff;
+}
+
 .blog-hero h1 {
   margin: 0;
   font-family: "Fraunces", Georgia, serif;
@@ -975,5 +1019,15 @@ a {
 
   .hero-media img {
     height: 78vh;
+  }
+
+  .blog-embed-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notion-embed {
+    height: calc(100vh - 14rem);
+    min-height: 70vh;
   }
 }
