@@ -26,57 +26,18 @@ Personal website for [lukejaros.com](https://lukejaros.com).
 
 ## Hosting on Mac mini
 
-The site is a static HTML/CSS/JS site served by **Caddy** on your Mac mini.
+Deploys use a **self-hosted GitHub Actions runner** on the Mac mini. Push to `main` → site updates automatically.
 
-### 1. Prepare the Mac mini
+**Full setup guide:** [deploy/MAC-MINI-SETUP.md](deploy/MAC-MINI-SETUP.md)
 
-SSH into the Mac mini and clone the repo (or copy the `deploy/` folder), then run:
+Quick summary:
 
-```bash
-bash deploy/setup-mac-mini.sh
-sudo bash deploy/setup-deploy-user.sh
-```
+1. On the **Mac mini**, install the runner: `REGISTRATION_TOKEN="..." bash deploy/install-runner.sh`
+2. Create site directory: `sudo mkdir -p /var/www/lukejaros.com && sudo chown -R $(whoami):staff /var/www/lukejaros.com`
+3. Install Caddy: `bash deploy/setup-mac-mini.sh`
+4. Point DNS + forward ports 80/443
 
-### 2. DNS
-
-At your domain registrar, add **A records** pointing to your home public IP:
-
-| Host | Type | Value |
-|------|------|-------|
-| `@` | A | your public IP |
-| `www` | A | your public IP |
-
-If your IP changes often, use a **Cloudflare Tunnel** or dynamic DNS instead.
-
-### 3. Router
-
-Forward ports **80** and **443** to the Mac mini's local IP.
-
-### 4. GitHub Actions deploy secrets
-
-In the repo → **Settings → Secrets and variables → Actions**, add:
-
-| Secret | Example | Purpose |
-|--------|---------|---------|
-| `DEPLOY_HOST` | `192.168.1.50` or `macmini.yourdomain.com` | Mac mini SSH host |
-| `DEPLOY_USER` | `deploy` | SSH user with write access to the site folder |
-| `DEPLOY_SSH_KEY` | private key contents | SSH key for deploy user |
-| `DEPLOY_PATH` | `/var/www/lukejaros.com/` | Remote directory (trailing slash required) |
-
-Generate a deploy key:
-
-```bash
-ssh-keygen -t ed25519 -C github-actions-lukejaros -f ~/.ssh/lukejaros_deploy -N ""
-```
-
-Add `lukejaros_deploy.pub` to `/Users/deploy/.ssh/authorized_keys` on the Mac mini.
-Add the **private** key as `DEPLOY_SSH_KEY`.
-
-### 5. Deploy
-
-Every push to `main` runs `.github/workflows/deploy.yml` and rsyncs the site to the Mac mini.
-
-Manual deploy: **Actions → Deploy to Mac mini → Run workflow**
+No SSH secrets needed — the runner on the Mac mini pulls jobs from GitHub directly.
 
 ## Strava live feed
 
