@@ -7,14 +7,13 @@ Personal website for [lukejaros.com](https://lukejaros.com).
 | Branch | Purpose |
 |--------|---------|
 | `dev` | Development and staging — active work happens here |
-| `prod` | Production — deploys to the live site |
-| `main` | Default branch (synced with initial setup) |
+| `main` | Production — deploys to the live site |
 
 ### Workflow
 
 1. Make changes on `dev`
 2. Preview and iterate locally with any static file server
-3. Merge `dev` → `prod` when ready to publish
+3. Merge `dev` → `main` when ready to publish
 
 ```bash
 # Preview locally
