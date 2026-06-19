@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Blog by Luke Jaroszewski — thoughts on engineering, outdoors, and building things."
+    />
+    <title>Blog · Luke Jaroszewski</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="/">Luke Jaroszewski</a>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="/#connect">Connect</a>
+      </nav>
+    </header>
+
+    <main class="blog-page">
+      <section class="section blog-hero reveal">
+        <p class="eyebrow">Notion-powered</p>
+        <h1>Writing &amp; <em>notes</em></h1>
+        <p class="lede">
+          Longer thoughts live in Notion and sync here automatically — engineering,
+          projects, and whatever else is worth writing down.
+        </p>
+        <a
+          class="button ghost blog-notion-link"
+          href="https://cpqluke.notion.site/Blog-38451826f07e80fc92a3fdc2d45b6e35"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Open in Notion →</a
+        >
+      </section>
+
+      <section class="section blog-list-section reveal">
+        <div id="blog-feed" class="blog-feed" aria-live="polite">
+          <div class="blog-status">Loading posts…</div>
+        </div>
+        <p class="blog-meta" id="blog-meta"></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Luke Jaroszewski</p>
+      <p class="env-badge" data-env="dev">Development</p>
+    </footer>
+
+    <script src="blog.js"></script>
+  </body>
+</html>
