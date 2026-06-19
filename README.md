@@ -12,13 +12,9 @@ Personal website for [lukejaros.com](https://lukejaros.com).
 ### Workflow
 
 1. Make changes on `dev`
-2. Preview and iterate locally with any static file server
+2. Preview locally: `python3 -m http.server 8080`
 3. Merge `dev` → `main` when ready to publish
-
-```bash
-# Preview locally
-python3 -m http.server 8080
-```
+4. Push to `main` triggers automatic deployment to the Mac mini
 
 ## Structure
 
@@ -26,8 +22,61 @@ python3 -m http.server 8080
 - `styles.css` — site styles
 - `script.js` — client-side behavior and Strava feed
 - `data/strava-activities.json` — cached Strava activities (auto-updated)
-- `api/strava.js` — serverless endpoint for live Strava fetches (Vercel)
-- `scripts/sync-strava.js` — syncs activities into the JSON cache
+- `deploy/` — Mac mini hosting setup (Caddy, scripts)
+
+## Hosting on Mac mini
+
+The site is a static HTML/CSS/JS site served by **Caddy** on your Mac mini.
+
+### 1. Prepare the Mac mini
+
+SSH into the Mac mini and clone the repo (or copy the `deploy/` folder), then run:
+
+```bash
+bash deploy/setup-mac-mini.sh
+sudo bash deploy/setup-deploy-user.sh
+```
+
+### 2. DNS
+
+At your domain registrar, add **A records** pointing to your home public IP:
+
+| Host | Type | Value |
+|------|------|-------|
+| `@` | A | your public IP |
+| `www` | A | your public IP |
+
+If your IP changes often, use a **Cloudflare Tunnel** or dynamic DNS instead.
+
+### 3. Router
+
+Forward ports **80** and **443** to the Mac mini's local IP.
+
+### 4. GitHub Actions deploy secrets
+
+In the repo → **Settings → Secrets and variables → Actions**, add:
+
+| Secret | Example | Purpose |
+|--------|---------|---------|
+| `DEPLOY_HOST` | `192.168.1.50` or `macmini.yourdomain.com` | Mac mini SSH host |
+| `DEPLOY_USER` | `deploy` | SSH user with write access to the site folder |
+| `DEPLOY_SSH_KEY` | private key contents | SSH key for deploy user |
+| `DEPLOY_PATH` | `/var/www/lukejaros.com/` | Remote directory (trailing slash required) |
+
+Generate a deploy key:
+
+```bash
+ssh-keygen -t ed25519 -C github-actions-lukejaros -f ~/.ssh/lukejaros_deploy -N ""
+```
+
+Add `lukejaros_deploy.pub` to `/Users/deploy/.ssh/authorized_keys` on the Mac mini.
+Add the **private** key as `DEPLOY_SSH_KEY`.
+
+### 5. Deploy
+
+Every push to `main` runs `.github/workflows/deploy.yml` and rsyncs the site to the Mac mini.
+
+Manual deploy: **Actions → Deploy to Mac mini → Run workflow**
 
 ## Strava live feed
 
@@ -67,8 +116,4 @@ In the repo settings, add:
 - `STRAVA_CLIENT_SECRET`
 - `STRAVA_REFRESH_TOKEN`
 
-The `Sync Strava activities` GitHub Action will update `data/strava-activities.json` every 15 minutes.
-
-### 4. Optional: Vercel live API
-
-If you deploy to Vercel, set the same three values as environment variables. The site will call `/api/strava` for on-demand activity fetches.
+The `Sync Strava activities` GitHub Action updates `data/strava-activities.json` every 15 minutes on `main`.

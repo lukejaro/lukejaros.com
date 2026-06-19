@@ -1,0 +1,15 @@
+lukejaros.com, www.lukejaros.com {
+	root * /var/www/lukejaros.com
+	file_server
+	encode gzip
+
+	header {
+		X-Content-Type-Options nosniff
+		X-Frame-Options SAMEORIGIN
+		Referrer-Policy strict-origin-when-cross-origin
+	}
+
+	log {
+		output file /var/log/caddy/lukejaros.com.log
+	}
+}
