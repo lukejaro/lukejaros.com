@@ -72,28 +72,3 @@ The `Sync Strava activities` GitHub Action will update `data/strava-activities.j
 ### 4. Optional: Vercel live API
 
 If you deploy to Vercel, set the same three values as environment variables. The site will call `/api/strava` for on-demand activity fetches.
-
-## Notion blog
-
-The blog lives at `blog.html` and syncs from your Notion page:
-https://cpqluke.notion.site/Blog-38451826f07e80fc92a3fdc2d45b6e35
-
-### 1. Create a Notion integration
-
-1. Go to https://www.notion.so/my-integrations
-2. Create a new integration and copy the **Internal Integration Secret**
-
-### 2. Share the Blog page
-
-Open your Blog page in Notion → **⋯** → **Connect to** → select your integration.
-
-### 3. Add GitHub secrets
-
-- `NOTION_TOKEN` — integration secret
-- `NOTION_BLOG_PAGE_ID` — optional, defaults to `38451826f07e80fc92a3fdc2d45b6e35`
-
-The `Sync Notion blog` GitHub Action updates `data/blog-posts.json` hourly.
-
-### 4. Optional: Vercel live API
-
-Set `NOTION_TOKEN` (and optionally `NOTION_BLOG_PAGE_ID`) as Vercel environment variables for on-demand fetches via `/api/notion`.
