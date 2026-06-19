@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="blog-embed-page">
+  <body>
     <header class="site-header">
       <a class="logo" href="/">Luke Jaroszewski</a>
       <nav aria-label="Primary">
@@ -26,38 +26,34 @@
           href="https://cpqluke.notion.site/Blog-38451826f07e80fc92a3fdc2d45b6e35"
           target="_blank"
           rel="noopener noreferrer"
-          >Open in Notion</a
+          >Notion</a
         >
         <a href="/#connect">Connect</a>
       </nav>
     </header>
 
     <main class="blog-page">
-      <section class="section blog-embed-section reveal">
-        <div class="blog-embed-header">
-          <div>
-            <p class="eyebrow">Live from Notion</p>
-            <h1>Blog</h1>
-          </div>
-          <a
-            class="button primary"
-            href="https://cpqluke.notion.site/Blog-38451826f07e80fc92a3fdc2d45b6e35"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Open full page</a
-          >
-        </div>
+      <section class="section blog-hero reveal">
+        <p class="eyebrow">From Notion</p>
+        <h1>Writing &amp; <em>notes</em></h1>
+        <p class="lede">
+          Posts are pulled from my Notion blog and rendered here — same content,
+          native to the site.
+        </p>
+        <a
+          class="button primary"
+          href="https://cpqluke.notion.site/Blog-38451826f07e80fc92a3fdc2d45b6e35"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Open in Notion →</a
+        >
+      </section>
 
-        <div class="notion-embed-wrap">
-          <iframe
-            class="notion-embed"
-            src="https://embed.notion.co/html?pageId=38451826-f07e-80fc-92a3-fdc2d45b6e35"
-            title="Luke Jaroszewski blog on Notion"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+      <section class="section blog-list-section reveal">
+        <div id="blog-feed" class="blog-feed" aria-live="polite">
+          <div class="blog-status">Loading posts…</div>
         </div>
+        <p class="blog-meta" id="blog-meta"></p>
       </section>
     </main>
 

@@ -819,6 +819,24 @@ a {
   justify-items: start;
 }
 
+.blog-setup-steps {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text-muted);
+}
+
+.blog-setup-steps li {
+  margin-bottom: 0.55rem;
+}
+
+.blog-setup-steps code {
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.9em;
+}
+
 .blog-card {
   padding: 1.4rem 1.5rem;
   border-radius: 18px;
