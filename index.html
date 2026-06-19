@@ -5,137 +5,307 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Luke Jaros — personal site, projects, and writing."
+      content="Luke Jaroszewski — Principal Solutions Engineer in Austin, TX. Building enterprise solutions by day, chasing trails and miles on Strava."
     />
-    <title>Luke Jaros</title>
+    <title>Luke Jaroszewski</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="grain" aria-hidden="true"></div>
-
     <header class="site-header">
-      <a class="logo" href="/">Luke Jaros</a>
+      <a class="logo" href="/">Luke Jaroszewski</a>
       <nav aria-label="Primary">
         <a href="#about">About</a>
         <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
+        <a href="#outdoors">Outdoors</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#connect">Connect</a>
       </nav>
     </header>
 
     <main>
       <section class="hero">
-        <p class="eyebrow">lukejaros.com</p>
-        <h1>
-          Building thoughtful things<br />
-          <em>for the web.</em>
-        </h1>
-        <p class="lede">
-          I'm Luke — a developer focused on clean interfaces, reliable systems,
-          and work that holds up over time.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#contact">Get in touch</a>
-          <a
-            class="button ghost"
-            href="https://github.com/lukejaro"
-            target="_blank"
-            rel="noopener noreferrer"
-            >GitHub</a
-          >
+        <div class="hero-media" aria-hidden="true">
+          <img src="images/gallery-2.jpg" alt="" />
+        </div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content reveal">
+          <p class="eyebrow">Austin, Texas</p>
+          <h1>
+            Engineering solutions.<br />
+            <em>Chasing the horizon.</em>
+          </h1>
+          <p class="lede">
+            Principal Solutions Engineer at Epicor. Texas State alum. Usually
+            somewhere between a customer demo and a trailhead — always moving,
+            always curious.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button primary"
+              href="https://www.linkedin.com/in/luke-j"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+            <a
+              class="button ghost"
+              href="https://strava.app.link/O4lWutDeKTb"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Strava</a
+            >
+            <a
+              class="button ghost"
+              href="https://www.instagram.com/lukejaros/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram</a
+            >
+          </div>
         </div>
       </section>
 
-      <section id="about" class="panel">
-        <div class="panel-copy">
-          <h2>About</h2>
+      <section id="about" class="section about reveal">
+        <div class="about-intro">
+          <div class="profile-card">
+            <img
+              src="images/profile.jpg"
+              alt="Luke Jaroszewski"
+              class="profile-photo"
+              width="120"
+              height="120"
+            />
+            <div>
+              <h2>About</h2>
+              <p class="subtitle">Principal Solutions Engineer · Epicor</p>
+            </div>
+          </div>
           <p>
-            I like projects where craft matters — whether that's a personal site,
-            a product feature, or the infrastructure underneath it. I care about
-            clarity in code, restraint in design, and shipping things that
-            actually work.
+            As a Principal Solutions Engineer at Epicor, I bring over eight
+            years of hands-on experience translating complex business problems
+            into clear, compelling product stories. I love the craft of a great
+            demo, the rigor of a well-built solution, and the people side of
+            making technology actually land.
           </p>
           <p>
-            This site is my home on the web: a place to share what I'm building,
-            point people to my work, and keep a simple public presence.
+            Outside of work, you'll find me on the trail, logging miles on
+            Strava, or out with the run club. Movement keeps me grounded — and
+            Austin gives me plenty of room to explore.
           </p>
         </div>
         <ul class="facts" aria-label="Quick facts">
           <li>
-            <span class="label">Based in</span>
-            <span class="value">The internet</span>
+            <span class="label">Location</span>
+            <span class="value">Austin, TX</span>
           </li>
           <li>
-            <span class="label">Currently</span>
-            <span class="value">Building &amp; learning</span>
+            <span class="label">Education</span>
+            <span class="value">Texas State University</span>
           </li>
           <li>
-            <span class="label">Interests</span>
-            <span class="value">Web, design, systems</span>
+            <span class="label">Outside</span>
+            <span class="value">Hiking · Running · Strava</span>
+          </li>
+          <li>
+            <span class="label">Community</span>
+            <span class="value">HYP · Toastmasters · FSAE</span>
           </li>
         </ul>
       </section>
 
-      <section id="work" class="panel work">
+      <section id="work" class="section work reveal">
         <div class="section-heading">
-          <h2>Selected work</h2>
-          <p>Projects and repos worth a look.</p>
+          <p class="eyebrow">Career</p>
+          <h2>Work &amp; background</h2>
+          <p>
+            Enterprise technology by day — with a foundation in engineering,
+            manufacturing, and leadership built at Texas State.
+          </p>
         </div>
         <div class="cards">
           <article class="card">
-            <p class="card-tag">Open source</p>
-            <h3>GitHub</h3>
+            <p class="card-tag">Current</p>
+            <h3>Epicor</h3>
             <p>
-              Code, experiments, and works in progress live on my GitHub
-              profile.
+              Principal Solutions Engineer helping customers turn insight into
+              action through hands-on demos, technical discovery, and
+              solution design.
             </p>
+            <a
+              href="https://www.linkedin.com/in/luke-j"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View on LinkedIn →</a
+            >
+          </article>
+          <article class="card">
+            <p class="card-tag">Education</p>
+            <h3>Texas State University</h3>
+            <p>
+              Bachelor's degree, graduated Cum Laude. Dean's List honoree.
+              Founding leader of the university's Formula SAE chapter and
+              project manager for senior design teams.
+            </p>
+          </article>
+          <article class="card">
+            <p class="card-tag">Credentials</p>
+            <h3>Certifications</h3>
+            <p>
+              Demo2Win!, Certified SOLIDWORKS Associate in Mechanical Design,
+              and Six Sigma Green Belt — a mix of presentation craft and
+              engineering fundamentals.
+            </p>
+          </article>
+          <article class="card">
+            <p class="card-tag">Leadership</p>
+            <h3>Beyond the desk</h3>
+            <p>
+              HYP board member supporting Austin Habitat, Toastmasters member,
+              and former Formula SAE president — building teams and community
+              off the clock too.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="outdoors" class="section outdoors reveal">
+        <div class="outdoors-copy">
+          <p class="eyebrow">Off the clock</p>
+          <h2>Trails, miles, and fresh air</h2>
+          <p>
+            I'm super active on Strava — hiking, running, and stacking miles
+            around Central Texas. There's nothing like a long morning on the
+            trail (or a solid run with friends) to reset after a week of
+            solutions engineering.
+          </p>
+          <a
+            class="button strava"
+            href="https://strava.app.link/O4lWutDeKTb"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="strava-mark" aria-hidden="true"></span>
+            Follow on Strava
+          </a>
+        </div>
+        <div class="outdoors-visual">
+          <img
+            src="images/gallery-2.jpg"
+            alt="Run club group photo in New Braunfels, Texas"
+            loading="lazy"
+          />
+          <div class="outdoors-stat">
+            <span class="stat-value">Active</span>
+            <span class="stat-label">on Strava</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section gallery reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Moments</p>
+          <h2>From the feed</h2>
+          <p>
+            A few snapshots from runs, meetups, and life around Austin — more on
+            Instagram.
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <a
+            class="gallery-item gallery-item--wide"
+            href="https://www.instagram.com/reel/DXjyVP5DlSb/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="images/gallery-2.jpg"
+              alt="New Braunfels run club group photo"
+              loading="lazy"
+            />
+            <span class="gallery-caption">Run club · New Braunfels</span>
+          </a>
+          <a
+            class="gallery-item"
+            href="https://www.instagram.com/p/DVE6MwAD2_H/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="images/gallery-4.jpg"
+              alt="Luke at a community meetup"
+              loading="lazy"
+            />
+            <span class="gallery-caption">Community meetup</span>
+          </a>
+          <a
+            class="gallery-item"
+            href="https://www.instagram.com/lukejaros/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="images/profile.jpg"
+              alt="Luke Jaroszewski profile"
+              loading="lazy"
+            />
+            <span class="gallery-caption">@lukejaros on Instagram</span>
+          </a>
+        </div>
+        <a
+          class="gallery-more"
+          href="https://www.instagram.com/lukejaros/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >See more on Instagram →</a
+        >
+      </section>
+
+      <section id="connect" class="section connect reveal">
+        <div class="connect-card">
+          <p class="eyebrow">Let's connect</p>
+          <h2>Say hello</h2>
+          <p>
+            Open to conversations about solutions engineering, Austin community
+            work, or the best trail within driving distance.
+          </p>
+          <div class="connect-links">
+            <a
+              href="https://www.linkedin.com/in/luke-j"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+            <a
+              href="https://strava.app.link/O4lWutDeKTb"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Strava</a
+            >
+            <a
+              href="https://www.instagram.com/lukejaros/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram</a
+            >
             <a
               href="https://github.com/lukejaro"
               target="_blank"
               rel="noopener noreferrer"
-              >View profile →</a
+              >GitHub</a
             >
-          </article>
-          <article class="card">
-            <p class="card-tag">This site</p>
-            <h3>lukejaros.com</h3>
-            <p>
-              A lightweight personal site with separate dev and prod branches
-              for staging and production.
-            </p>
-            <a
-              href="https://github.com/lukejaro/lukejaros.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              >View repo →</a
-            >
-          </article>
+          </div>
         </div>
-      </section>
-
-      <section id="contact" class="panel contact">
-        <h2>Contact</h2>
-        <p>
-          Want to collaborate, say hello, or talk about a project? Reach out on
-          GitHub — I'm always happy to connect.
-        </p>
-        <a
-          class="button primary"
-          href="https://github.com/lukejaro"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Message on GitHub</a
-        >
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>© <span id="year"></span> Luke Jaros</p>
+      <p>© <span id="year"></span> Luke Jaroszewski</p>
       <p class="env-badge" data-env="dev">Development</p>
     </footer>
 
