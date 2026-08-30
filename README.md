@@ -11,10 +11,10 @@ Personal website for [lukejaros.com](https://lukejaros.com).
 
 ### Workflow
 
-1. Make changes on `dev`
+1. Make changes on `dev` (Cloudflare publishes a preview URL for this branch)
 2. Preview locally: `python3 -m http.server 8080`
 3. Merge `dev` → `main` when ready to publish
-4. Push to `main` triggers automatic deployment to the Mac mini
+4. Push to `main` deploys production on Cloudflare Pages
 
 ## Structure
 
@@ -22,22 +22,51 @@ Personal website for [lukejaros.com](https://lukejaros.com).
 - `styles.css` — site styles
 - `script.js` — client-side behavior and Strava feed
 - `data/strava-activities.json` — cached Strava activities (auto-updated)
-- `deploy/` — Mac mini hosting setup (Caddy, scripts)
+- `_headers` / `_redirects` / `wrangler.toml` — Cloudflare Pages config
+- `deploy/` — previous Mac mini hosting setup (Caddy, scripts)
 
-## Hosting on Mac mini
+## Hosting on Cloudflare Pages
 
-Deploys use a **self-hosted GitHub Actions runner** on the Mac mini. Push to `main` → site updates automatically.
+The live site is a static HTML/CSS/JS project. Cloudflare Pages builds from GitHub: push to `main` → [lukejaros.com](https://lukejaros.com) updates. No Mac mini, port forwarding, or Caddy required.
 
-**Full setup guide:** [deploy/MAC-MINI-SETUP.md](deploy/MAC-MINI-SETUP.md)
+**Dashboard:** [dash.cloudflare.com](https://dash.cloudflare.com) → **Workers & Pages**
 
-Quick summary:
+### Connect the repo (first time)
 
-1. On the **Mac mini**, install the runner: `REGISTRATION_TOKEN="..." bash deploy/install-runner.sh`
-2. Create site directory: `sudo mkdir -p /var/www/lukejaros.com && sudo chown -R $(whoami):staff /var/www/lukejaros.com`
-3. Install Caddy: `bash deploy/setup-mac-mini.sh`
-4. Point DNS + forward ports 80/443
+1. Create a free Cloudflare account.
+2. **Workers & Pages** → **Create** → **Pages** → **Import an existing Git repository**.
+3. Authorize GitHub and select `lukejaro/lukejaros.com`.
+4. Use these build settings:
 
-No SSH secrets needed — the runner on the Mac mini pulls jobs from GitHub directly.
+| Setting | Value |
+|--------|--------|
+| Project name | `lukejaros` |
+| Production branch | `main` |
+| Build command | `exit 0` |
+| Build output directory | `/` |
+
+5. Deploy. You should get a URL like `https://lukejaros.pages.dev`.
+
+`wrangler.toml` already sets `pages_build_output_dir = "."`. Preview deploys from `dev` happen automatically.
+
+### Point lukejaros.com at Cloudflare
+
+Apex domains (`lukejaros.com`) need the domain on Cloudflare DNS (free).
+
+1. In Cloudflare, **Add a site** → `lukejaros.com` → Free plan.
+2. Cloudflare will show two nameservers (like `ada.ns.cloudflare.com` and `bob.ns.cloudflare.com`).
+3. At the registrar (Squarespace), replace the current nameservers with Cloudflare’s. Keep any **MX / email** records — copy them into the Cloudflare DNS zone first if they exist.
+4. Wait until the zone is **Active**.
+5. In the Pages project → **Custom domains** → add `lukejaros.com` and `www.lukejaros.com`.
+6. Cloudflare creates the DNS records. HTTPS is automatic.
+
+`_redirects` sends `www.lukejaros.com` → `lukejaros.com`.
+
+Until nameservers finish propagating, `*.pages.dev` is live.
+
+### After cutover
+
+You can stop the Mac mini runner and ignore [deploy/MAC-MINI-SETUP.md](deploy/MAC-MINI-SETUP.md). `.github/workflows/deploy.yml` still deploys to the mini until you delete it — leave it until DNS is on Cloudflare so the old host stays as a fallback.
 
 ## Strava live feed
 

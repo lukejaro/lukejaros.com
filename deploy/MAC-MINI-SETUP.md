@@ -1,4 +1,6 @@
-# Mac mini setup guide
+# Mac mini setup guide (previous host)
+
+Production now targets **Cloudflare Pages**. Use this only if you need the old Caddy + self-hosted runner setup as a fallback.
 
 Set this up **on the Mac mini**, not your MacBook Air. Your MacBook is where you code and push to GitHub; the Mac mini hosts the site and runs the deploy runner.
 

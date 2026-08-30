@@ -34,6 +34,33 @@ if (revealElements.length && "IntersectionObserver" in window) {
 const STRAVA_REFRESH_MS = 5 * 60 * 1000;
 const STRAVA_SOURCES = ["/api/strava", "data/strava-activities.json"];
 
+function formatRelativeTime(isoDate) {
+  if (!isoDate) return "";
+  const then = new Date(isoDate).getTime();
+  if (Number.isNaN(then)) return "";
+  const diffSeconds = Math.max(0, Math.floor((Date.now() - then) / 1000));
+
+  if (diffSeconds < 60) return "just now";
+  if (diffSeconds < 3600) {
+    const minutes = Math.floor(diffSeconds / 60);
+    return `${minutes}m ago`;
+  }
+  if (diffSeconds < 86400) {
+    const hours = Math.floor(diffSeconds / 3600);
+    return `${hours}h ago`;
+  }
+  if (diffSeconds < 604800) {
+    const days = Math.floor(diffSeconds / 86400);
+    return `${days}d ago`;
+  }
+
+  return new Date(isoDate).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
 function formatUpdatedAt(isoDate) {
   if (!isoDate) return "";
   const date = new Date(isoDate);
@@ -74,7 +101,7 @@ function renderStravaFeed(container, feed) {
             <span class="strava-type" aria-hidden="true">${activity.icon}</span>
             <div>
               <h3>${activity.name}</h3>
-              <p class="strava-subtitle">${activity.type} · ${activity.relativeTime}</p>
+              <p class="strava-subtitle">${activity.type} · ${formatRelativeTime(activity.startDate) || activity.relativeTime}</p>
             </div>
           </div>
           <dl class="strava-stats">

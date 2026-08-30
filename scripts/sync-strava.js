@@ -25,9 +25,40 @@ async function main() {
 
   const outputPath = path.join(__dirname, "..", "data", "strava-activities.json");
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-  fs.writeFileSync(outputPath, `${JSON.stringify(feed, null, 2)}\n`);
 
+  let previous = {};
+  try {
+    previous = JSON.parse(fs.readFileSync(outputPath, "utf8"));
+  } catch {
+    previous = {};
+  }
+
+  if (activityFingerprint(previous) === activityFingerprint(feed)) {
+    console.log("No activity changes; leaving existing feed in place.");
+    return;
+  }
+
+  fs.writeFileSync(outputPath, `${JSON.stringify(feed, null, 2)}\n`);
   console.log(`Wrote ${feed.activities.length} activities to ${outputPath}`);
+}
+
+function activityFingerprint(feed) {
+  return JSON.stringify(
+    (feed.activities || []).map((activity) => ({
+      id: activity.id,
+      name: activity.name,
+      type: activity.type,
+      startDate: activity.startDate,
+      distance: activity.distance,
+      elevation: activity.elevation,
+      duration: activity.duration,
+      distanceLabel: activity.distanceLabel,
+      elevationLabel: activity.elevationLabel,
+      durationLabel: activity.durationLabel,
+      paceLabel: activity.paceLabel,
+      url: activity.url,
+    }))
+  );
 }
 
 main().catch((error) => {
