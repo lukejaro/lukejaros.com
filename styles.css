@@ -156,11 +156,11 @@ a {
 
 .site-header nav a {
   color: rgba(243, 238, 230, 0.72);
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0.55rem 0.7rem;
+  padding: 0.55rem 0.55rem;
   white-space: nowrap;
   transition: color 180ms ease;
 }
@@ -394,10 +394,67 @@ a {
   padding: clamp(4.5rem, 10vw, 8rem) 0;
 }
 
-.work {
-  background:
-    radial-gradient(ellipse at 88% 0%, rgba(201, 163, 106, 0.05), transparent 40%),
-    var(--bg);
+.work,
+.background {
+  background: var(--bg);
+}
+
+.background {
+  padding-block: clamp(2.75rem, 6vw, 4.75rem);
+}
+
+.background .section-heading {
+  margin-bottom: 1.15rem;
+}
+
+.background h2 {
+  font-size: clamp(1.55rem, 3.2vw, 2.2rem);
+  margin-bottom: 0;
+}
+
+.background-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.background-list > div {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: 0.35rem 1.5rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.background-list dt {
+  color: var(--accent);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding-top: 0.25rem;
+}
+
+.background-list dd {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.background-list a {
+  margin-left: 0.35rem;
+  color: var(--accent-strong);
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--hairline);
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.background-list a:hover {
+  color: var(--text);
+  border-color: var(--accent);
 }
 
 .section-heading {
@@ -1057,15 +1114,13 @@ a {
     overflow: hidden;
   }
 
-  .about,
-  .cards {
+  .about {
     grid-template-columns: 1fr;
   }
 
-  .card:nth-child(odd),
-  .card:nth-child(even) {
-    padding: 1.7rem 0;
-    border-right: 0;
+  .background-list > div {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
   }
 
   .strava-stats {
