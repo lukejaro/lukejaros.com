@@ -12,6 +12,28 @@ if (header) {
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
+const navCheckbox = document.querySelector(".nav-checkbox");
+if (navCheckbox) {
+  const syncNav = () => {
+    navCheckbox.setAttribute("aria-expanded", String(navCheckbox.checked));
+  };
+  const closeNav = () => {
+    navCheckbox.checked = false;
+    syncNav();
+  };
+
+  syncNav();
+  navCheckbox.addEventListener("change", syncNav);
+
+  document.querySelectorAll("#site-nav a").forEach((link) => {
+    link.addEventListener("click", closeNav);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeNav();
+  });
+}
+
 const revealElements = document.querySelectorAll(".reveal");
 if (revealElements.length && "IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
