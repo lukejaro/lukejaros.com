@@ -3,39 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0c0b09" />
     <meta
       name="description"
       content="Luke Jaroszewski — Principal Solutions Engineer in Austin, TX. Building enterprise solutions by day, chasing trails and miles on Strava."
     />
     <title>Luke Jaroszewski</title>
+    <link rel="preload" as="image" href="images/ig-07.jpg" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#about">Skip to content</a>
+
     <header class="site-header">
-      <a class="logo" href="/">Luke Jaroszewski</a>
-      <nav aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#outdoors">Outdoors</a>
-        <a href="#strava">Strava</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#connect">Connect</a>
-      </nav>
+      <div class="header-inner">
+        <a class="logo" href="/">Luke Jaroszewski</a>
+        <input
+          class="nav-checkbox"
+          type="checkbox"
+          id="nav-open"
+          aria-label="Menu"
+          aria-controls="site-nav"
+        />
+        <label class="nav-toggle" for="nav-open">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span class="nav-toggle-label">Menu</span>
+        </label>
+        <nav id="site-nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#outdoors">Outdoors</a>
+          <a href="#strava">Strava</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#connect">Connect</a>
+        </nav>
+      </div>
     </header>
 
     <main>
       <section class="hero">
         <div class="hero-media" aria-hidden="true">
-          <img src="images/ig-07.jpg" alt="" />
+          <img src="images/ig-07.jpg" alt="" fetchpriority="high" />
         </div>
         <div class="hero-overlay" aria-hidden="true"></div>
-        <div class="hero-content reveal">
+        <div class="hero-content">
           <p class="eyebrow">Austin, Texas</p>
           <h1>
             Engineering solutions.<br />
@@ -70,17 +87,21 @@
             >
           </div>
         </div>
+        <a class="hero-scroll" href="#about" aria-label="Scroll to about">
+          <span aria-hidden="true"></span>
+        </a>
       </section>
 
       <section id="about" class="section about reveal">
         <div class="about-intro">
+          <p class="chapter" aria-hidden="true">01</p>
           <div class="profile-card">
             <img
               src="images/profile.jpg"
               alt="Luke Jaroszewski"
               class="profile-photo"
-              width="120"
-              height="120"
+              width="160"
+              height="160"
             />
             <div>
               <h2>About</h2>
@@ -122,6 +143,7 @@
 
       <section id="work" class="section work reveal">
         <div class="section-heading">
+          <p class="chapter" aria-hidden="true">02</p>
           <p class="eyebrow">Career</p>
           <h2>Work &amp; background</h2>
           <p>
@@ -175,8 +197,20 @@
         </div>
       </section>
 
-      <section id="outdoors" class="section outdoors reveal">
+      <section id="outdoors" class="outdoors reveal">
+        <div class="outdoors-visual">
+          <img
+            src="images/ig-10.jpg"
+            alt="Luke hiking on a mountain trail with friends"
+            loading="lazy"
+          />
+          <div class="outdoors-stat">
+            <span class="stat-value">7 mi</span>
+            <span class="stat-label">4,900 ft gain</span>
+          </div>
+        </div>
         <div class="outdoors-copy">
+          <p class="chapter" aria-hidden="true">03</p>
           <p class="eyebrow">Off the clock</p>
           <h2>Trails, miles, and fresh air</h2>
           <p>
@@ -194,21 +228,11 @@
             Follow on Strava
           </a>
         </div>
-        <div class="outdoors-visual">
-          <img
-            src="images/ig-10.jpg"
-            alt="Luke hiking on a mountain trail with friends"
-            loading="lazy"
-          />
-          <div class="outdoors-stat">
-            <span class="stat-value">7 mi</span>
-            <span class="stat-label">4,900 ft gain</span>
-          </div>
-        </div>
       </section>
 
       <section id="strava" class="section strava-section reveal">
         <div class="section-heading">
+          <p class="chapter" aria-hidden="true">04</p>
           <p class="eyebrow">Live feed</p>
           <h2>Recent Strava activity</h2>
           <p>
@@ -223,6 +247,7 @@
 
       <section id="gallery" class="section gallery reveal">
         <div class="section-heading">
+          <p class="chapter" aria-hidden="true">05</p>
           <p class="eyebrow">Moments</p>
           <h2>From Instagram</h2>
           <p>
@@ -346,8 +371,12 @@
         >
       </section>
 
-      <section id="connect" class="section connect reveal">
+      <section id="connect" class="connect reveal">
+        <div class="connect-media" aria-hidden="true">
+          <img src="images/ig-09.jpg" alt="" loading="lazy" />
+        </div>
         <div class="connect-card">
+          <p class="chapter" aria-hidden="true">06</p>
           <p class="eyebrow">Let's connect</p>
           <h2>Say hello</h2>
           <p>
