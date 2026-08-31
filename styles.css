@@ -42,7 +42,9 @@ body {
   font-weight: 400;
   line-height: 1.65;
   color: var(--text);
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse at 18% -10%, rgba(201, 163, 106, 0.08), transparent 42%),
+    var(--bg);
 }
 
 img {
@@ -193,8 +195,8 @@ a {
   max-width: none;
   object-fit: cover;
   object-position: 28% 42%;
-  filter: saturate(0.88) contrast(1.12) brightness(0.78);
-  transform: scale(1.08);
+  filter: saturate(0.94) contrast(1.1) brightness(0.92);
+  transform: scale(1.06);
   animation: hero-settle 24s var(--ease-out) forwards;
 }
 
@@ -204,12 +206,12 @@ a {
   background:
     linear-gradient(
       180deg,
-      rgba(12, 11, 9, 0.28) 0%,
-      rgba(12, 11, 9, 0.08) 32%,
-      rgba(12, 11, 9, 0.55) 68%,
-      rgba(12, 11, 9, 0.92) 100%
+      rgba(12, 11, 9, 0.22) 0%,
+      rgba(12, 11, 9, 0.02) 34%,
+      rgba(12, 11, 9, 0.38) 68%,
+      rgba(12, 11, 9, 0.82) 100%
     ),
-    linear-gradient(90deg, rgba(12, 11, 9, 0.45) 0%, rgba(12, 11, 9, 0.08) 48%, rgba(12, 11, 9, 0.2) 100%);
+    linear-gradient(90deg, rgba(12, 11, 9, 0.28) 0%, rgba(12, 11, 9, 0.02) 52%, rgba(12, 11, 9, 0.12) 100%);
 }
 
 .hero-content {
@@ -217,8 +219,8 @@ a {
   z-index: 1;
   width: min(calc(100% - (var(--gutter) * 2)), var(--max-width));
   margin-inline: auto;
-  padding: 7rem 0 5.5rem;
-  max-width: 52rem;
+  padding: 7rem 0 6.25rem;
+  max-width: 58rem;
   justify-self: start;
   animation: rise-in 1.15s var(--ease-out) 0.15s both;
 }
@@ -239,7 +241,7 @@ a {
 .outdoors-copy h2 {
   margin: 0;
   font-family: Fraunces, Georgia, serif;
-  font-size: clamp(2.7rem, 7.4vw, 6.4rem);
+  font-size: clamp(2.85rem, 8vw, 7.25rem);
   font-weight: 300;
   font-optical-sizing: auto;
   line-height: 0.98;
@@ -390,6 +392,12 @@ a {
 .section {
   margin: 0 auto;
   padding: clamp(4.5rem, 10vw, 8rem) 0;
+}
+
+.work {
+  background:
+    radial-gradient(ellipse at 88% 0%, rgba(201, 163, 106, 0.05), transparent 40%),
+    var(--bg);
 }
 
 .section-heading {
@@ -547,7 +555,7 @@ a {
 .outdoors {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(18rem, 0.85fr) minmax(0, 1.15fr);
+  grid-template-columns: minmax(16rem, 0.72fr) minmax(0, 1.28fr);
   min-height: 100svh;
   overflow: hidden;
 }
@@ -1107,6 +1115,10 @@ a {
   .hero h1 {
     font-size: clamp(2.45rem, 12vw, 3.6rem);
   }
+
+  .hero-scroll {
+    display: none;
+  }
 }
 
 @media (max-width: 560px) {
@@ -1115,7 +1127,15 @@ a {
     flex-direction: column;
   }
 
-  .hero-actions .button,
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
   .connect-links a {
     flex: 1 1 calc(50% - 0.75rem);
   }
