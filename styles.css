@@ -77,6 +77,7 @@ a {
   display: block;
   margin: 0;
   width: 100%;
+  min-height: 100vh;
   height: 100vh;
   height: 100svh;
   overflow: hidden;
@@ -97,16 +98,16 @@ a {
   object-position: 30% 28%;
 }
 
-.still:nth-of-type(2) img {
+.still--trail img {
   object-position: 50% 64%;
 }
 
-.still:nth-of-type(3) img,
-.still:nth-of-type(4) img {
+.still--bike img,
+.still--ski img {
   object-position: 50% 56%;
 }
 
-.still:nth-of-type(5) img {
+.still--rodeo img {
   object-position: 48% 74%;
 }
 
@@ -123,7 +124,7 @@ a {
 }
 
 .still--end img {
-  object-position: 50% 36%;
+  object-position: 50% 18%;
 }
 
 .still figcaption,
@@ -173,10 +174,9 @@ a {
   left: var(--pad);
   right: var(--pad);
   bottom: var(--pad-bottom);
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   font-weight: 450;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .still--end::after {
@@ -230,14 +230,12 @@ a {
     object-position: 38% 32%;
   }
 
-  .still figcaption,
-  .end a,
-  .open h1 {
-    letter-spacing: 0.08em;
+  .still--end img {
+    object-position: 50% 12%;
   }
 
   .still figcaption {
-    font-size: 0.72rem;
+    font-size: 0.8rem;
   }
 }
 
