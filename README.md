@@ -18,9 +18,10 @@ Personal website for [lukejaros.com](https://lukejaros.com).
 
 ## Structure
 
-- `index.html` — main page
-- `styles.css` — site styles
-- `script.js` — client-side behavior and Strava feed
+- `index.html` — full-screen photo journal
+- `styles.css` — stills, captions, and the last-frame links
+- `script.js` — optional quiet Strava line on the last still
+- `404.html` — same look as the opening still
 - `data/strava-activities.json` — cached Strava activities (auto-updated)
 - `_headers` / `_redirects` / `wrangler.toml` — Cloudflare Pages config
 - `deploy/` — previous Mac mini hosting setup (Caddy, scripts)

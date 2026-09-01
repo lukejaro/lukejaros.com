@@ -3,402 +3,157 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#1c1914" />
     <meta
       name="description"
-      content="Luke Jaroszewski in Austin, TX. Hiking, running, and stacking miles around Central Texas and beyond."
+      content="Luke Jaroszewski — Austin. Trails. Miles."
     />
     <title>Luke Jaroszewski</title>
     <link rel="preload" as="image" href="images/ig-07.jpg" fetchpriority="high" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#about">Skip to content</a>
+    <a class="skip" href="#end">Skip to links</a>
 
-    <header class="site-header">
-      <div class="header-inner">
-        <a class="logo" href="/">Luke Jaroszewski</a>
-        <input
-          class="nav-checkbox"
-          type="checkbox"
-          id="nav-open"
-          aria-label="Menu"
-          aria-controls="site-nav"
+    <main class="journal">
+      <article class="still still--open">
+        <img
+          src="images/ig-07.jpg"
+          alt="Sitting on a rocky summit above a sea of clouds"
+          width="1080"
+          height="1440"
+          fetchpriority="high"
         />
-        <label class="nav-toggle" for="nav-open">
-          <span class="nav-toggle-bars" aria-hidden="true"></span>
-          <span class="nav-toggle-label">Menu</span>
-        </label>
-        <nav id="site-nav" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#outdoors">Outdoors</a>
-          <a href="#strava">Strava</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#connect">Connect</a>
-        </nav>
-      </div>
-    </header>
+        <header class="open">
+          <h1>Luke Jaroszewski</h1>
+          <p>Austin. Trails. Miles.</p>
+        </header>
+      </article>
 
-    <main>
-      <section class="hero chapter">
-        <div class="chapter-media hero-media" aria-hidden="true">
-          <img src="images/ig-07.jpg" alt="" fetchpriority="high" />
-        </div>
-        <div class="chapter-shade hero-shade" aria-hidden="true"></div>
-        <div class="chapter-copy hero-copy">
-          <p class="eyebrow">Austin, Texas</p>
-          <h1>
-            <span>Chasing</span>
-            <span>the horizon.</span>
-          </h1>
-          <p class="lede">
-            Hiking, running, stacking miles around Central Texas and beyond.
-            Usually somewhere between a trailhead and a ridgeline.
-          </p>
-          <div class="hero-actions">
-            <a
-              class="button ghost"
-              href="https://www.linkedin.com/in/luke-j"
-              target="_blank"
-              rel="noopener noreferrer"
-              >LinkedIn</a
-            >
-            <a
-              class="button ghost"
-              href="https://strava.app.link/O4lWutDeKTb"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Strava</a
-            >
-            <a
-              class="button ghost"
-              href="https://www.instagram.com/lukejaros/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Instagram</a
-            >
-          </div>
-        </div>
-      </section>
+      <figure class="still">
+        <img
+          src="images/ig-10.jpg"
+          alt="Group hike on a mountain trail"
+          width="1080"
+          height="1920"
+          loading="lazy"
+        />
+        <figcaption>7 mile hike</figcaption>
+      </figure>
 
-      <section id="about" class="about chapter-plain reveal">
-        <div class="plain-copy">
-          <p class="eyebrow">About</p>
-          <h2>Austin</h2>
-          <div class="about-body">
-            <img
-              src="images/profile.jpg"
-              alt="Luke Jaroszewski"
-              class="profile-photo"
-              width="160"
-              height="160"
-            />
-            <div>
-              <p>
-                Weekdays I'm in Austin. The rest of the time I'm on a trail, logging
-                miles on Strava, or out with the run club. Movement keeps me
-                grounded, and this city gives me plenty of room to explore.
-              </p>
-              <p>
-                I also work in solutions engineering, but this page isn't that.
-                It's the miles, the ridgelines, the mountain towns, and the people
-                I do it with.
-              </p>
-            </div>
-          </div>
-          <ul class="facts" aria-label="Quick facts">
-            <li>
-              <span class="label">Location</span>
-              <span class="value">Austin, TX</span>
-            </li>
-            <li>
-              <span class="label">Outside</span>
-              <span class="value">Hiking · Running · Strava</span>
-            </li>
-            <li>
-              <span class="label">Community</span>
-              <span class="value">HYP · Toastmasters · FSAE</span>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <figure class="still">
+        <img
+          src="images/ig-12.jpg"
+          alt="Mountain biking in Whitefish, Montana"
+          width="720"
+          height="1280"
+          loading="lazy"
+        />
+        <figcaption>Whitefish</figcaption>
+      </figure>
 
-      <section id="outdoors" class="outdoors chapter reveal">
-        <div class="chapter-media" aria-hidden="true">
-          <img
-            src="images/ig-10.jpg"
-            alt=""
-            loading="lazy"
-          />
-        </div>
-        <div class="chapter-shade" aria-hidden="true"></div>
-        <div class="chapter-copy">
-          <p class="eyebrow">Outside</p>
-          <h2>
-            <span>Trails</span>
-          </h2>
-          <p>
-            I'm super active on Strava — hiking, running, and stacking miles
-            around Central Texas and beyond. Seven miles and 4,900 feet of
-            elevation in a day? That's a good Saturday.
-          </p>
-          <p class="chapter-stat">
-            <span>7 mi</span>
-            <span>4,900 ft gain</span>
-          </p>
+      <figure class="still">
+        <img
+          src="images/ig-03.jpg"
+          alt="Skiing at Red River in cowboy hats"
+          width="720"
+          height="1280"
+          loading="lazy"
+        />
+        <figcaption>Red River</figcaption>
+      </figure>
+
+      <figure class="still">
+        <img
+          src="images/ig-04.jpg"
+          alt="Cowboy hats and skis at Red River"
+          width="720"
+          height="1280"
+          loading="lazy"
+        />
+        <figcaption>First rodeo</figcaption>
+      </figure>
+
+      <figure class="still still--wide">
+        <img
+          src="images/ig-01.jpg"
+          alt="Friends at the Barbarossa Trough"
+          width="1080"
+          height="608"
+          loading="lazy"
+        />
+        <figcaption>Barbarossa Trough</figcaption>
+      </figure>
+
+      <figure class="still">
+        <img
+          src="images/ig-09.jpg"
+          alt="Beach sunset with family"
+          width="1080"
+          height="1440"
+          loading="lazy"
+        />
+        <figcaption>Beach sunset</figcaption>
+      </figure>
+
+      <figure class="still still--officiant">
+        <img
+          src="images/ig-02.jpg"
+          alt="Officiating his brother's wedding"
+          width="1080"
+          height="1440"
+          loading="lazy"
+        />
+        <figcaption>Best man</figcaption>
+      </figure>
+
+      <figure class="still still--crew">
+        <img
+          src="images/ig-05.jpg"
+          alt="Friends at a mountain ski town"
+          width="1080"
+          height="1918"
+          loading="lazy"
+        />
+      </figure>
+
+      <article class="still still--end" id="end">
+        <img
+          src="images/ig-08.jpg"
+          alt="Night out with friends"
+          width="1080"
+          height="1281"
+          loading="lazy"
+        />
+        <nav class="end" aria-label="Elsewhere">
           <a
-            class="button ghost"
             href="https://strava.app.link/O4lWutDeKTb"
             target="_blank"
             rel="noopener noreferrer"
+            >Strava</a
           >
-            Follow on Strava
-          </a>
-        </div>
-      </section>
-
-      <section id="strava" class="strava-section chapter-plain reveal">
-        <div class="plain-copy">
-          <p class="eyebrow">Live feed</p>
-          <h2>Recent activity</h2>
-          <p>
-            Latest runs, hikes, and rides — refreshed automatically from Strava.
-          </p>
-          <div id="strava-feed" class="strava-feed" aria-live="polite">
-            <div class="strava-status">Loading activities…</div>
-          </div>
-          <p class="strava-meta" id="strava-meta"></p>
-        </div>
-      </section>
-
-      <section id="gallery" class="gallery">
-        <div class="chapter reveal">
-          <div class="chapter-media" aria-hidden="true">
-            <img src="images/ig-12.jpg" alt="" loading="lazy" />
-          </div>
-          <div class="chapter-shade" aria-hidden="true"></div>
-          <div class="chapter-copy">
-            <p class="eyebrow">From Instagram</p>
-            <h2>Moments</h2>
-            <p>
-              Hikes, mountain towns, family, and the occasional rodeo — pulled
-              straight from
-              <a href="https://www.instagram.com/lukejaros/" target="_blank" rel="noopener noreferrer">@lukejaros</a>.
-            </p>
-          </div>
-        </div>
-        <div class="still-sequence gallery-grid">
           <a
-            class="gallery-item still still--wide"
-            href="https://www.instagram.com/reel/DK_RaSbus5A/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/ig-10.jpg"
-              alt="Group hike on a mountain trail"
-              loading="lazy"
-            />
-            <span class="gallery-caption">7 mile hike · 4,900 ft gain</span>
-          </a>
-          <a
-            class="gallery-item still"
-            href="https://www.instagram.com/p/DPoZVWAEUwB/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/ig-07.jpg"
-              alt="Luke sitting on a rocky summit above a sea of clouds"
-              loading="lazy"
-            />
-            <span class="gallery-caption">Above the clouds</span>
-          </a>
-          <a
-            class="gallery-item still"
-            href="https://www.instagram.com/reel/DK7gtTAvxzJ/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/ig-12.jpg"
-              alt="Mountain biking in Whitefish, Montana"
-              loading="lazy"
-            />
-            <span class="gallery-caption">Whitefish, Montana</span>
-          </a>
-          <a
-            class="gallery-item still"
-            href="https://www.instagram.com/reel/DUiovDhDi-_/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/ig-03.jpg"
-              alt="Skiing at Red River in cowboy hats"
-              loading="lazy"
-            />
-            <span class="gallery-caption">Red River 2026</span>
-          </a>
-          <a
-            class="gallery-item still"
-            href="https://www.instagram.com/p/DMTGH_WA5tb/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/ig-09.jpg"
-              alt="Beach sunset with family"
-              loading="lazy"
-            />
-            <span class="gallery-caption">Beach sunset</span>
-          </a>
-          <a
-            class="gallery-item still"
-            href="https://www.instagram.com/p/DVUkH5FAfzb/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/ig-01.jpg"
-              alt="Friends at the Barbarossa Trough"
-              loading="lazy"
-            />
-            <span class="gallery-caption">Barbarossa Trough</span>
-          </a>
-          <a
-            class="gallery-item still"
-            href="https://www.instagram.com/p/DU82GGMAcFI/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/ig-02.jpg"
-              alt="Luke officiating his brother's wedding"
-              loading="lazy"
-            />
-            <span class="gallery-caption">Best man &amp; officiant</span>
-          </a>
-          <a
-            class="gallery-item still still--wide"
-            href="https://www.instagram.com/reel/DUgRsp7jw3l/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/ig-04.jpg"
-              alt="Red River rodeo 2026"
-              loading="lazy"
-            />
-            <span class="gallery-caption">First rodeo</span>
-          </a>
-        </div>
-        <p class="gallery-more-wrap">
-          <a
-            class="gallery-more"
             href="https://www.instagram.com/lukejaros/"
             target="_blank"
             rel="noopener noreferrer"
-            >See all 191 posts on Instagram</a
+            >Instagram</a
           >
-        </p>
-      </section>
-
-      <section id="connect" class="connect chapter reveal">
-        <div class="chapter-media connect-media" aria-hidden="true">
-          <img src="images/ig-09.jpg" alt="" loading="lazy" />
-        </div>
-        <div class="chapter-shade" aria-hidden="true"></div>
-        <div class="chapter-copy connect-card">
-          <p class="eyebrow">Let's connect</p>
-          <h2>Say hello</h2>
-          <p>
-            Open to conversations about the best trail within driving distance,
-            or Austin community work.
-          </p>
-          <div class="connect-links">
-            <a
-              href="https://www.linkedin.com/in/luke-j"
-              target="_blank"
-              rel="noopener noreferrer"
-              >LinkedIn</a
-            >
-            <a
-              href="https://strava.app.link/O4lWutDeKTb"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Strava</a
-            >
-            <a
-              href="https://www.instagram.com/lukejaros/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Instagram</a
-            >
-            <a
-              href="https://github.com/lukejaro"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub</a
-            >
-          </div>
-        </div>
-      </section>
-
-      <section id="background" class="background chapter-plain reveal">
-        <div class="plain-copy">
-          <p class="eyebrow">Also</p>
-          <h2>Background</h2>
-          <dl class="background-list">
-            <div>
-              <dt>Now</dt>
-              <dd>
-                Principal Solutions Engineer at Epicor — demos, technical
-                discovery, and solution design.
-                <a
-                  href="https://www.linkedin.com/in/luke-j"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >LinkedIn</a
-                >
-              </dd>
-            </div>
-            <div>
-              <dt>School</dt>
-              <dd>
-                Texas State University. Bachelor's, graduated Cum Laude. Dean's
-                List honoree. Founding leader of the university's Formula SAE
-                chapter and project manager for senior design teams.
-              </dd>
-            </div>
-            <div>
-              <dt>Credentials</dt>
-              <dd>
-                Demo2Win!, Certified SOLIDWORKS Associate in Mechanical Design,
-                and Six Sigma Green Belt.
-              </dd>
-            </div>
-            <div>
-              <dt>Community</dt>
-              <dd>
-                HYP board member supporting Austin Habitat, Toastmasters member,
-                and former Formula SAE president.
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </section>
+          <a
+            href="https://www.linkedin.com/in/luke-j"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/lukejaro"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <div id="strava-feed" class="strava-line" hidden></div>
+        </nav>
+      </article>
     </main>
-
-    <footer class="site-footer">
-      <p>© <span id="year"></span> Luke Jaroszewski</p>
-    </footer>
 
     <script src="script.js"></script>
   </body>
