@@ -1,58 +1,3 @@
-const year = document.getElementById("year");
-if (year) {
-  year.textContent = String(new Date().getFullYear());
-}
-
-const header = document.querySelector(".site-header");
-if (header) {
-  const onScroll = () => {
-    header.classList.toggle("is-scrolled", window.scrollY > 12);
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-}
-
-const navCheckbox = document.querySelector(".nav-checkbox");
-if (navCheckbox) {
-  const syncNav = () => {
-    navCheckbox.setAttribute("aria-expanded", String(navCheckbox.checked));
-  };
-  const closeNav = () => {
-    navCheckbox.checked = false;
-    syncNav();
-  };
-
-  syncNav();
-  navCheckbox.addEventListener("change", syncNav);
-
-  document.querySelectorAll("#site-nav a").forEach((link) => {
-    link.addEventListener("click", closeNav);
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeNav();
-  });
-}
-
-const revealElements = document.querySelectorAll(".reveal");
-if (revealElements.length && "IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-  );
-
-  revealElements.forEach((element) => observer.observe(element));
-} else {
-  revealElements.forEach((element) => element.classList.add("is-visible"));
-}
-
 const STRAVA_REFRESH_MS = 5 * 60 * 1000;
 const STRAVA_SOURCES = ["/api/strava", "data/strava-activities.json"];
 
@@ -79,87 +24,32 @@ function formatRelativeTime(isoDate) {
   return new Date(isoDate).toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
-    year: "numeric",
   });
 }
 
-function formatUpdatedAt(isoDate) {
-  if (!isoDate) return "";
-  const date = new Date(isoDate);
-  return `Updated ${date.toLocaleString("en-US", {
-    month: "short",
-    day: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
-  })}`;
+function latestActivityLine(activity) {
+  const when =
+    formatRelativeTime(activity.startDate) || activity.relativeTime || "";
+  const bits = [activity.name, activity.distanceLabel, when].filter(Boolean);
+  return bits.join(" · ");
 }
 
-function renderStravaFeed(container, feed) {
-  const activities = feed.activities || [];
-
-  if (!activities.length) {
-    container.innerHTML = `
-      <div class="strava-empty">
-        <p>No activities yet. Once Strava is connected, your latest runs and hikes will show up here.</p>
-        <a class="button strava" href="https://strava.app.link/O4lWutDeKTb" target="_blank" rel="noopener noreferrer">
-          <span class="strava-mark" aria-hidden="true"></span>
-          View on Strava
-        </a>
-      </div>
-    `;
+function renderQuietStrava(container, feed) {
+  const activity = (feed.activities || [])[0];
+  if (!activity) {
+    container.hidden = true;
+    container.replaceChildren();
     return;
   }
 
-  container.innerHTML = activities
-    .map(
-      (activity) => `
-        <a
-          class="strava-card"
-          href="${activity.url}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="strava-card-top">
-            <span class="strava-type" aria-hidden="true">${activity.icon}</span>
-            <div>
-              <h3>${activity.name}</h3>
-              <p class="strava-subtitle">${activity.type} · ${formatRelativeTime(activity.startDate) || activity.relativeTime}</p>
-            </div>
-          </div>
-          <dl class="strava-stats">
-            <div>
-              <dt>Distance</dt>
-              <dd>${activity.distanceLabel}</dd>
-            </div>
-            <div>
-              <dt>Time</dt>
-              <dd>${activity.durationLabel}</dd>
-            </div>
-            <div>
-              <dt>Elevation</dt>
-              <dd>${activity.elevationLabel}</dd>
-            </div>
-            <div>
-              <dt>Pace</dt>
-              <dd>${activity.paceLabel}</dd>
-            </div>
-          </dl>
-        </a>
-      `
-    )
-    .join("");
-}
+  const link = document.createElement("a");
+  link.href = activity.url || "https://strava.app.link/O4lWutDeKTb";
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = latestActivityLine(activity);
 
-function renderStravaError(container, message) {
-  container.innerHTML = `
-    <div class="strava-empty">
-      <p>${message}</p>
-      <a class="button strava" href="https://strava.app.link/O4lWutDeKTb" target="_blank" rel="noopener noreferrer">
-        <span class="strava-mark" aria-hidden="true"></span>
-        Open Strava profile
-      </a>
-    </div>
-  `;
+  container.replaceChildren(link);
+  container.hidden = false;
 }
 
 async function fetchStravaFeed() {
@@ -190,27 +80,14 @@ async function fetchStravaFeed() {
 
 async function loadStravaFeed() {
   const container = document.getElementById("strava-feed");
-  const meta = document.getElementById("strava-meta");
   if (!container) return;
 
   try {
     const feed = await fetchStravaFeed();
-    renderStravaFeed(container, feed);
-
-    if (meta) {
-      const updated = formatUpdatedAt(feed.updatedAt);
-      meta.textContent = updated
-        ? `${updated} · auto-refreshes every 5 minutes`
-        : "Auto-refreshes every 5 minutes";
-    }
-  } catch (error) {
-    renderStravaError(
-      container,
-      "Strava feed is not connected yet. Add your API credentials to start showing live activities."
-    );
-    if (meta) {
-      meta.textContent = "";
-    }
+    renderQuietStrava(container, feed);
+  } catch {
+    container.hidden = true;
+    container.replaceChildren();
   }
 }
 
