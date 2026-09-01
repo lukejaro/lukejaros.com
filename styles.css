@@ -112,17 +112,17 @@ a {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.1rem 1.25rem 0.4rem;
+  padding: 0.85rem 1.1rem 0;
 }
 
 .namecard {
-  width: min(34rem, 72vw);
-  padding: 0.7rem 1.1rem 0.85rem;
+  width: min(28rem, 68vw);
+  padding: 0.45rem 0.9rem 0.55rem;
   background:
     repeating-linear-gradient(
       180deg,
-      #fffaf0 0 27px,
-      rgba(30, 74, 140, 0.08) 27px 28px
+      #fffaf0 0 24px,
+      rgba(30, 74, 140, 0.08) 24px 25px
     );
   box-shadow:
     3px 4px 0 rgba(27, 20, 15, 0.08),
@@ -143,7 +143,7 @@ a {
 h1 {
   margin: 0;
   font-family: var(--font-mark);
-  font-size: clamp(2.1rem, 5.6vw, 3.7rem);
+  font-size: clamp(1.85rem, 4.6vw, 3.05rem);
   font-weight: 400;
   line-height: 0.95;
   letter-spacing: -0.01em;
@@ -164,12 +164,12 @@ h1 {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.45rem 0.5rem;
-  padding-top: 0.35rem;
+  padding-top: 0.2rem;
 }
 
 .edge-links a {
   display: inline-block;
-  padding: 0.28rem 0.62rem 0.18rem;
+  padding: 0.38rem 0.7rem 0.28rem;
   font-family: var(--font-stamp);
   font-size: 0.92rem;
   background: var(--tape);
@@ -197,10 +197,14 @@ h1 {
   transform: rotate(0deg) scale(1.06);
 }
 
+.spread {
+  margin-top: -0.4rem;
+}
+
 .collage {
   position: relative;
-  min-height: 168vh;
-  margin: 0.2rem 0.8rem 1.5rem;
+  min-height: 122vh;
+  margin: 0 0.55rem 1.2rem;
 }
 
 .shot,
@@ -291,113 +295,113 @@ h1 {
 
 .s-summit {
   top: 0;
-  left: 0.5%;
-  width: min(24%, 19rem);
+  left: 0.2%;
+  width: min(21%, 16.4rem);
   transform: rotate(-2.4deg);
   z-index: 5;
 }
 
 .s-hike {
-  top: 2%;
-  left: 20%;
-  width: min(20%, 16rem);
+  top: 1.2%;
+  left: 17.5%;
+  width: min(17.5%, 13.6rem);
   transform: rotate(1.7deg);
   z-index: 6;
 }
 
 .s-whitefish {
-  top: 0.4%;
-  left: 38%;
-  width: min(16.5%, 13.5rem);
+  top: 0;
+  left: 33%;
+  width: min(15%, 11.8rem);
   transform: rotate(-1.5deg);
   z-index: 4;
 }
 
 .s-rodeo {
-  top: 1.6%;
-  left: 53%;
-  width: min(16%, 13rem);
+  top: 1%;
+  left: 46.5%;
+  width: min(14.5%, 11.4rem);
   transform: rotate(2.1deg);
   z-index: 5;
 }
 
 .s-ski {
   top: 0;
-  left: 67.5%;
-  width: min(17%, 13.8rem);
+  left: 59.5%;
+  width: min(15%, 11.8rem);
   transform: rotate(-2.8deg);
   z-index: 6;
 }
 
 .s-beach {
-  top: 36%;
-  left: 1%;
-  width: min(21%, 16.5rem);
+  top: 24%;
+  left: 0.6%;
+  width: min(18.5%, 14.4rem);
   transform: rotate(1.5deg);
   z-index: 5;
 }
 
 .s-wedding {
-  top: 34%;
-  left: 20%;
-  width: min(19%, 15.2rem);
+  top: 22%;
+  left: 17.8%;
+  width: min(17%, 13.2rem);
   transform: rotate(-1.3deg);
   z-index: 6;
 }
 
 .s-trough {
-  top: 38%;
-  left: 38%;
-  width: min(28%, 22rem);
+  top: 26%;
+  left: 34%;
+  width: min(25%, 19.5rem);
   transform: rotate(0.8deg);
   z-index: 4;
 }
 
 .s-crew {
-  top: 33%;
-  left: 65%;
-  width: min(19%, 15.4rem);
+  top: 21%;
+  left: 57%;
+  width: min(16.5%, 13rem);
   transform: rotate(-1.9deg);
   z-index: 3;
 }
 
 .s-night {
-  top: 68%;
-  left: 2%;
-  width: min(20%, 16rem);
+  top: 46%;
+  left: 1.2%;
+  width: min(18%, 14rem);
   transform: rotate(1.8deg);
   z-index: 5;
 }
 
 .s-medals {
-  top: 70%;
-  left: 22%;
-  width: min(18%, 14.5rem);
+  top: 48%;
+  left: 19.5%;
+  width: min(16.5%, 13rem);
   transform: rotate(-1.6deg);
   z-index: 4;
 }
 
 .s-table {
-  top: 66%;
-  left: 40.5%;
-  width: min(20%, 16rem);
+  top: 44%;
+  left: 36%;
+  width: min(18%, 14rem);
   transform: rotate(1.4deg);
   z-index: 5;
 }
 
 .s-face {
-  top: 72%;
-  left: 61%;
-  width: min(12%, 9.5rem);
+  top: 2.2%;
+  left: 75%;
+  width: min(11%, 8.6rem);
   transform: rotate(3.4deg);
   z-index: 7;
 }
 
 .sticky {
   position: absolute;
-  top: 69%;
-  left: 74%;
-  width: min(22%, 15.5rem);
+  top: 47%;
+  left: 67%;
+  width: min(20%, 14.2rem);
   padding: 0.85rem 0.95rem 1rem;
   background: var(--sticky);
   transform: rotate(-2.6deg);
@@ -442,16 +446,16 @@ h1 {
 }
 
 .scribble-miles {
-  top: 31%;
-  left: 21%;
-  font-size: 1.25rem;
+  top: 20%;
+  left: 18%;
+  font-size: 1.2rem;
   transform: rotate(-8deg);
 }
 
 .scribble-people {
-  top: 63%;
-  left: 58%;
-  font-size: 1.3rem;
+  top: 42%;
+  left: 52%;
+  font-size: 1.25rem;
   color: var(--ballpoint);
   transform: rotate(4deg);
 }
@@ -506,11 +510,15 @@ h1 {
 }
 
 @media (min-width: 1101px) {
+  .collage {
+    margin-right: 5.75rem;
+  }
+
   .edge-links {
     position: fixed;
-    top: 7.5rem;
-    right: 0.7rem;
-    z-index: 30;
+    top: 6.4rem;
+    right: 0.55rem;
+    z-index: 50;
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
@@ -536,7 +544,7 @@ h1 {
 
 @media (max-width: 1100px) and (min-width: 761px) {
   .collage {
-    min-height: 210vh;
+    min-height: 175vh;
   }
 
   .s-summit {
@@ -611,7 +619,8 @@ h1 {
   }
 
   .s-face {
-    top: 78%;
+    top: 2%;
+    left: 80%;
     width: 16%;
   }
 
@@ -715,23 +724,14 @@ h1 {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 360px) {
   .collage {
-    columns: 1;
+    column-gap: 0.4rem;
   }
 
   .shot,
   .sticky {
-    width: min(92%, 22rem);
-    margin-inline: auto;
-  }
-
-  .shot:nth-child(odd) {
-    transform: rotate(-1.2deg);
-  }
-
-  .shot:nth-child(even) {
-    transform: rotate(1.3deg);
+    margin-bottom: 0.5rem;
   }
 }
 
