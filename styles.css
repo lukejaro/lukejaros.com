@@ -579,13 +579,13 @@ a {
 .still {
   position: relative;
   overflow: hidden;
-  min-height: min(72vh, 46rem);
+  height: min(72vh, 46rem);
   background: #050505;
 }
 
 .still--wide {
   grid-column: 1 / -1;
-  min-height: min(88vh, 56rem);
+  height: min(88vh, 56rem);
 }
 
 .gallery-item img {
@@ -738,7 +738,7 @@ a {
     gap: 0.5rem;
     padding: 0.4rem 0;
     color: var(--text);
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.2em;
   }
@@ -789,12 +789,13 @@ a {
   .nav-checkbox:checked ~ nav {
     position: fixed;
     inset: var(--header-h) 0 0;
+    z-index: 50;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 0.2rem;
     padding: 1.25rem var(--gutter) 3rem;
-    background: rgba(0, 0, 0, 0.96);
+    background: #000;
   }
 
   .nav-checkbox:checked ~ nav a {
@@ -807,6 +808,11 @@ a {
 
   body:has(.nav-checkbox:checked) {
     overflow: hidden;
+  }
+
+  body:has(.nav-checkbox:checked) .hero-copy,
+  body:has(.nav-checkbox:checked) .chapter-copy {
+    visibility: hidden;
   }
 
   .about-body,
@@ -840,11 +846,11 @@ a {
 
   .still,
   .gallery-item {
-    min-height: 72svh;
+    height: 72svh;
   }
 
   .still--wide {
-    min-height: 80svh;
+    height: 80svh;
   }
 
   .gallery-caption {
