@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0c0b09" />
+    <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Luke Jaroszewski in Austin, TX. Hiking, running, and stacking miles around Central Texas and beyond."
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -41,20 +41,22 @@
           <a href="#strava">Strava</a>
           <a href="#gallery">Gallery</a>
           <a href="#connect">Connect</a>
-          <a href="#background">Background</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-media" aria-hidden="true">
+      <section class="hero chapter">
+        <div class="chapter-media hero-media" aria-hidden="true">
           <img src="images/ig-07.jpg" alt="" fetchpriority="high" />
         </div>
-        <div class="hero-overlay" aria-hidden="true"></div>
-        <div class="hero-content">
+        <div class="chapter-shade hero-shade" aria-hidden="true"></div>
+        <div class="chapter-copy hero-copy">
           <p class="eyebrow">Austin, Texas</p>
-          <h1><em>Chasing the horizon.</em></h1>
+          <h1>
+            <span>Chasing</span>
+            <span>the horizon.</span>
+          </h1>
           <p class="lede">
             Hiking, running, stacking miles around Central Texas and beyond.
             Usually somewhere between a trailhead and a ridgeline.
@@ -68,7 +70,7 @@
               >LinkedIn</a
             >
             <a
-              class="button primary"
+              class="button ghost"
               href="https://strava.app.link/O4lWutDeKTb"
               target="_blank"
               rel="noopener noreferrer"
@@ -83,15 +85,13 @@
             >
           </div>
         </div>
-        <a class="hero-scroll" href="#about" aria-label="Scroll to about">
-          <span aria-hidden="true"></span>
-        </a>
       </section>
 
-      <section id="about" class="section about reveal">
-        <div class="about-intro">
-          <p class="chapter" aria-hidden="true">01</p>
-          <div class="profile-card">
+      <section id="about" class="about chapter-plain reveal">
+        <div class="plain-copy">
+          <p class="eyebrow">About</p>
+          <h2>Austin</h2>
+          <div class="about-body">
             <img
               src="images/profile.jpg"
               alt="Luke Jaroszewski"
@@ -100,98 +100,102 @@
               height="160"
             />
             <div>
-              <h2>About</h2>
+              <p>
+                Weekdays I'm in Austin. The rest of the time I'm on a trail, logging
+                miles on Strava, or out with the run club. Movement keeps me
+                grounded, and this city gives me plenty of room to explore.
+              </p>
+              <p>
+                I also work in solutions engineering, but this page isn't that.
+                It's the miles, the ridgelines, the mountain towns, and the people
+                I do it with.
+              </p>
             </div>
           </div>
-          <p>
-            Weekdays I'm in Austin. The rest of the time I'm on a trail, logging
-            miles on Strava, or out with the run club. Movement keeps me
-            grounded, and this city gives me plenty of room to explore.
-          </p>
-          <p>
-            I also work in solutions engineering, but this page isn't that.
-            It's the miles, the ridgelines, the mountain towns, and the people
-            I do it with.
-          </p>
+          <ul class="facts" aria-label="Quick facts">
+            <li>
+              <span class="label">Location</span>
+              <span class="value">Austin, TX</span>
+            </li>
+            <li>
+              <span class="label">Outside</span>
+              <span class="value">Hiking · Running · Strava</span>
+            </li>
+            <li>
+              <span class="label">Community</span>
+              <span class="value">HYP · Toastmasters · FSAE</span>
+            </li>
+          </ul>
         </div>
-        <ul class="facts" aria-label="Quick facts">
-          <li>
-            <span class="label">Location</span>
-            <span class="value">Austin, TX</span>
-          </li>
-          <li>
-            <span class="label">Outside</span>
-            <span class="value">Hiking · Running · Strava</span>
-          </li>
-          <li>
-            <span class="label">Community</span>
-            <span class="value">HYP · Toastmasters · FSAE</span>
-          </li>
-        </ul>
       </section>
 
-      <section id="outdoors" class="outdoors reveal">
-        <div class="outdoors-visual">
+      <section id="outdoors" class="outdoors chapter reveal">
+        <div class="chapter-media" aria-hidden="true">
           <img
             src="images/ig-10.jpg"
-            alt="Luke hiking on a mountain trail with friends"
+            alt=""
             loading="lazy"
           />
-          <div class="outdoors-stat">
-            <span class="stat-value">7 mi</span>
-            <span class="stat-label">4,900 ft gain</span>
-          </div>
         </div>
-        <div class="outdoors-copy">
-          <p class="chapter" aria-hidden="true">02</p>
+        <div class="chapter-shade" aria-hidden="true"></div>
+        <div class="chapter-copy">
           <p class="eyebrow">Outside</p>
-          <h2>Trails, miles, and fresh air</h2>
+          <h2>
+            <span>Trails</span>
+          </h2>
           <p>
             I'm super active on Strava — hiking, running, and stacking miles
             around Central Texas and beyond. Seven miles and 4,900 feet of
             elevation in a day? That's a good Saturday.
           </p>
+          <p class="chapter-stat">
+            <span>7 mi</span>
+            <span>4,900 ft gain</span>
+          </p>
           <a
-            class="button strava"
+            class="button ghost"
             href="https://strava.app.link/O4lWutDeKTb"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span class="strava-mark" aria-hidden="true"></span>
             Follow on Strava
           </a>
         </div>
       </section>
 
-      <section id="strava" class="section strava-section reveal">
-        <div class="section-heading">
-          <p class="chapter" aria-hidden="true">03</p>
+      <section id="strava" class="strava-section chapter-plain reveal">
+        <div class="plain-copy">
           <p class="eyebrow">Live feed</p>
-          <h2>Recent Strava activity</h2>
+          <h2>Recent activity</h2>
           <p>
             Latest runs, hikes, and rides — refreshed automatically from Strava.
           </p>
+          <div id="strava-feed" class="strava-feed" aria-live="polite">
+            <div class="strava-status">Loading activities…</div>
+          </div>
+          <p class="strava-meta" id="strava-meta"></p>
         </div>
-        <div id="strava-feed" class="strava-feed" aria-live="polite">
-          <div class="strava-status">Loading activities…</div>
-        </div>
-        <p class="strava-meta" id="strava-meta"></p>
       </section>
 
-      <section id="gallery" class="section gallery reveal">
-        <div class="section-heading">
-          <p class="chapter" aria-hidden="true">04</p>
-          <p class="eyebrow">Moments</p>
-          <h2>From Instagram</h2>
-          <p>
-            Hikes, mountain towns, family, and the occasional rodeo — pulled
-            straight from
-            <a href="https://www.instagram.com/lukejaros/" target="_blank" rel="noopener noreferrer">@lukejaros</a>.
-          </p>
+      <section id="gallery" class="gallery">
+        <div class="chapter reveal">
+          <div class="chapter-media" aria-hidden="true">
+            <img src="images/ig-12.jpg" alt="" loading="lazy" />
+          </div>
+          <div class="chapter-shade" aria-hidden="true"></div>
+          <div class="chapter-copy">
+            <p class="eyebrow">From Instagram</p>
+            <h2>Moments</h2>
+            <p>
+              Hikes, mountain towns, family, and the occasional rodeo — pulled
+              straight from
+              <a href="https://www.instagram.com/lukejaros/" target="_blank" rel="noopener noreferrer">@lukejaros</a>.
+            </p>
+          </div>
         </div>
-        <div class="gallery-grid">
+        <div class="still-sequence gallery-grid">
           <a
-            class="gallery-item gallery-item--wide"
+            class="gallery-item still still--wide"
             href="https://www.instagram.com/reel/DK_RaSbus5A/"
             target="_blank"
             rel="noopener noreferrer"
@@ -204,7 +208,7 @@
             <span class="gallery-caption">7 mile hike · 4,900 ft gain</span>
           </a>
           <a
-            class="gallery-item gallery-item--tall"
+            class="gallery-item still"
             href="https://www.instagram.com/p/DPoZVWAEUwB/"
             target="_blank"
             rel="noopener noreferrer"
@@ -217,7 +221,7 @@
             <span class="gallery-caption">Above the clouds</span>
           </a>
           <a
-            class="gallery-item"
+            class="gallery-item still"
             href="https://www.instagram.com/reel/DK7gtTAvxzJ/"
             target="_blank"
             rel="noopener noreferrer"
@@ -230,7 +234,7 @@
             <span class="gallery-caption">Whitefish, Montana</span>
           </a>
           <a
-            class="gallery-item"
+            class="gallery-item still"
             href="https://www.instagram.com/reel/DUiovDhDi-_/"
             target="_blank"
             rel="noopener noreferrer"
@@ -243,7 +247,7 @@
             <span class="gallery-caption">Red River 2026</span>
           </a>
           <a
-            class="gallery-item"
+            class="gallery-item still"
             href="https://www.instagram.com/p/DMTGH_WA5tb/"
             target="_blank"
             rel="noopener noreferrer"
@@ -256,7 +260,7 @@
             <span class="gallery-caption">Beach sunset</span>
           </a>
           <a
-            class="gallery-item"
+            class="gallery-item still"
             href="https://www.instagram.com/p/DVUkH5FAfzb/"
             target="_blank"
             rel="noopener noreferrer"
@@ -269,7 +273,7 @@
             <span class="gallery-caption">Barbarossa Trough</span>
           </a>
           <a
-            class="gallery-item"
+            class="gallery-item still"
             href="https://www.instagram.com/p/DU82GGMAcFI/"
             target="_blank"
             rel="noopener noreferrer"
@@ -282,7 +286,7 @@
             <span class="gallery-caption">Best man &amp; officiant</span>
           </a>
           <a
-            class="gallery-item"
+            class="gallery-item still still--wide"
             href="https://www.instagram.com/reel/DUgRsp7jw3l/"
             target="_blank"
             rel="noopener noreferrer"
@@ -295,21 +299,23 @@
             <span class="gallery-caption">First rodeo</span>
           </a>
         </div>
-        <a
-          class="gallery-more"
-          href="https://www.instagram.com/lukejaros/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >See all 191 posts on Instagram →</a
-        >
+        <p class="gallery-more-wrap">
+          <a
+            class="gallery-more"
+            href="https://www.instagram.com/lukejaros/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >See all 191 posts on Instagram</a
+          >
+        </p>
       </section>
 
-      <section id="connect" class="connect reveal">
-        <div class="connect-media" aria-hidden="true">
+      <section id="connect" class="connect chapter reveal">
+        <div class="chapter-media connect-media" aria-hidden="true">
           <img src="images/ig-09.jpg" alt="" loading="lazy" />
         </div>
-        <div class="connect-card">
-          <p class="chapter" aria-hidden="true">05</p>
+        <div class="chapter-shade" aria-hidden="true"></div>
+        <div class="chapter-copy connect-card">
           <p class="eyebrow">Let's connect</p>
           <h2>Say hello</h2>
           <p>
@@ -345,49 +351,48 @@
         </div>
       </section>
 
-      <section id="background" class="section background reveal">
-        <div class="section-heading">
-          <p class="chapter" aria-hidden="true">06</p>
+      <section id="background" class="background chapter-plain reveal">
+        <div class="plain-copy">
           <p class="eyebrow">Also</p>
           <h2>Background</h2>
+          <dl class="background-list">
+            <div>
+              <dt>Now</dt>
+              <dd>
+                Principal Solutions Engineer at Epicor — demos, technical
+                discovery, and solution design.
+                <a
+                  href="https://www.linkedin.com/in/luke-j"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LinkedIn</a
+                >
+              </dd>
+            </div>
+            <div>
+              <dt>School</dt>
+              <dd>
+                Texas State University. Bachelor's, graduated Cum Laude. Dean's
+                List honoree. Founding leader of the university's Formula SAE
+                chapter and project manager for senior design teams.
+              </dd>
+            </div>
+            <div>
+              <dt>Credentials</dt>
+              <dd>
+                Demo2Win!, Certified SOLIDWORKS Associate in Mechanical Design,
+                and Six Sigma Green Belt.
+              </dd>
+            </div>
+            <div>
+              <dt>Community</dt>
+              <dd>
+                HYP board member supporting Austin Habitat, Toastmasters member,
+                and former Formula SAE president.
+              </dd>
+            </div>
+          </dl>
         </div>
-        <dl class="background-list">
-          <div>
-            <dt>Now</dt>
-            <dd>
-              Principal Solutions Engineer at Epicor — demos, technical
-              discovery, and solution design.
-              <a
-                href="https://www.linkedin.com/in/luke-j"
-                target="_blank"
-                rel="noopener noreferrer"
-                >LinkedIn</a
-              >
-            </dd>
-          </div>
-          <div>
-            <dt>School</dt>
-            <dd>
-              Texas State University. Bachelor's, graduated Cum Laude. Dean's
-              List honoree. Founding leader of the university's Formula SAE
-              chapter and project manager for senior design teams.
-            </dd>
-          </div>
-          <div>
-            <dt>Credentials</dt>
-            <dd>
-              Demo2Win!, Certified SOLIDWORKS Associate in Mechanical Design,
-              and Six Sigma Green Belt.
-            </dd>
-          </div>
-          <div>
-            <dt>Community</dt>
-            <dd>
-              HYP board member supporting Austin Habitat, Toastmasters member,
-              and former Formula SAE president.
-            </dd>
-          </div>
-        </dl>
       </section>
     </main>
 
