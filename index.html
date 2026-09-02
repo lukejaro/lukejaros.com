@@ -3,33 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f3e2c4" />
+    <meta name="theme-color" content="#0b1220" />
     <meta
       name="description"
       content="Luke Jaroszewski. Austin. Trails. Miles. People."
     />
     <title>Luke Jaroszewski</title>
     <link rel="preload" as="image" href="images/ig-07.jpg" fetchpriority="high" />
-    <link rel="preload" as="image" href="images/ig-10.jpg" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Permanent+Marker&family=Special+Elite&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Syne:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#spread">Skip to photos</a>
+    <a class="skip-link" href="#log">Skip to content</a>
 
-    <div class="paper" aria-hidden="true"></div>
+    <div class="sky" aria-hidden="true"></div>
 
-    <header class="mast">
-      <div class="namecard">
-        <h1>Luke Jaroszewski</h1>
-        <p class="voice">Austin. Trails. Miles. People.</p>
-      </div>
-      <nav class="edge-links" aria-label="Around the web">
+    <header class="topbar">
+      <a class="mark" href="#top">Luke Jaroszewski</a>
+      <nav class="jump" aria-label="On this page">
+        <a href="#log">01 Log</a>
+        <a href="#ground">02 Ground</a>
+        <a href="#quests">03 Quests</a>
+      </nav>
+      <nav class="comms" aria-label="Around the web">
         <a
           href="https://strava.app.link/O4lWutDeKTb"
           target="_blank"
@@ -57,216 +58,335 @@
       </nav>
     </header>
 
-    <main id="spread" class="spread">
-      <section class="collage" aria-label="A page from the scrapbook">
-        <a
-          class="shot s-summit tape-tl"
-          href="https://www.instagram.com/p/DPoZVWAEUwB/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="images/ig-07.jpg"
-            alt="Luke sitting on a rocky summit above a sea of clouds"
-            width="1080"
-            height="1440"
-            fetchpriority="high"
-          />
-          <span class="cap ink-blue">above the clouds.</span>
-        </a>
-
-        <a
-          class="shot s-hike tape-tr"
-          href="https://www.instagram.com/reel/DK_RaSbus5A/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="images/ig-10.jpg"
-            alt="Group hike on a mountain trail"
-            width="1080"
-            height="1920"
-            fetchpriority="high"
-          />
-          <span class="cap ink-red">7 miles. 4,900 ft.</span>
-        </a>
-
-        <a
-          class="shot s-whitefish"
-          href="https://www.instagram.com/reel/DK7gtTAvxzJ/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="images/ig-12.jpg"
-            alt="Mountain biking in Whitefish, Montana"
-            width="720"
-            height="1280"
-            loading="lazy"
-          />
-          <span class="cap">Whitefish.</span>
-        </a>
-
-        <a
-          class="shot s-rodeo tape-tr"
-          href="https://www.instagram.com/reel/DUgRsp7jw3l/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="images/ig-04.jpg"
-            alt="Red River rodeo"
-            width="720"
-            height="1280"
-            loading="lazy"
-          />
-          <span class="cap ink-red">first rodeo.</span>
-        </a>
-
-        <a
-          class="shot s-ski"
-          href="https://www.instagram.com/reel/DUiovDhDi-_/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="images/ig-03.jpg"
-            alt="Skiing at Red River in cowboy hats"
-            width="720"
-            height="1280"
-            loading="lazy"
-          />
-          <span class="cap ink-blue">Red River ’26</span>
-        </a>
-
-        <a
-          class="shot s-beach tape-tl"
-          href="https://www.instagram.com/p/DMTGH_WA5tb/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="images/ig-09.jpg"
-            alt="Beach sunset with family"
-            width="1080"
-            height="1440"
-            loading="lazy"
-          />
-          <span class="cap">beach sunset.</span>
-        </a>
-
-        <a
-          class="shot s-wedding"
-          href="https://www.instagram.com/p/DU82GGMAcFI/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="images/ig-02.jpg"
-            alt="Luke officiating his brother's wedding"
-            width="1080"
-            height="1440"
-            loading="lazy"
-          />
-          <span class="cap ink-blue">best man &amp; officiant.</span>
-        </a>
-
-        <a
-          class="shot s-trough tape-br"
-          href="https://www.instagram.com/p/DVUkH5FAfzb/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="images/ig-01.jpg"
-            alt="Friends at the Barbarossa Trough"
-            width="1080"
-            height="608"
-            loading="lazy"
-          />
-          <span class="cap">Barbarossa Trough.</span>
-        </a>
-
-        <figure class="shot s-crew">
-          <img
-            src="images/ig-05.jpg"
-            alt="Friends together at a ski resort"
-            width="1080"
-            height="1918"
-            loading="lazy"
-          />
-          <figcaption class="cap">the whole crew.</figcaption>
-        </figure>
-
-        <figure class="shot s-night tape-tl">
-          <img
-            src="images/ig-08.jpg"
-            alt="Friends at a night out"
-            width="1080"
-            height="1281"
-            loading="lazy"
-          />
-          <figcaption class="cap ink-red">hat stays on.</figcaption>
-        </figure>
-
-        <figure class="shot s-medals">
-          <img
-            src="images/ig-06.jpg"
-            alt="Friends celebrating with medals"
-            width="1080"
-            height="1440"
-            loading="lazy"
-          />
-          <figcaption class="cap">we showed up.</figcaption>
-        </figure>
-
-        <figure class="shot s-table tape-tr">
-          <img
-            src="images/ig-11.jpg"
-            alt="Luke with family at a table"
-            width="1080"
-            height="1440"
-            loading="lazy"
-          />
-          <figcaption class="cap ink-blue">these people.</figcaption>
-        </figure>
-
-        <figure class="shot s-face">
-          <img
-            src="images/profile.jpg"
-            alt="Luke Jaroszewski"
-            width="320"
-            height="320"
-            loading="lazy"
-          />
-          <figcaption class="cap">Luke.</figcaption>
-        </figure>
-
-        <p class="scribble scribble-miles" aria-hidden="true">
-          a good Saturday ↑
-        </p>
-        <p class="scribble scribble-people" aria-hidden="true">always the people</p>
-
-        <aside class="sticky" id="strava-note">
-          <p class="sticky-title">lately on strava</p>
-          <div id="strava-feed">
-            <p>
-              the miles live
-              <a
-                href="https://strava.app.link/O4lWutDeKTb"
-                target="_blank"
-                rel="noopener noreferrer"
-                >over here</a
-              >.
+    <main id="top">
+      <header class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Personal log · Austin</p>
+            <h1>
+              <span class="given">Luke</span>
+              <span class="family">Jaroszewski</span>
+            </h1>
+            <p class="tagline">Austin. Trails. Miles. People.</p>
+            <p class="lede">
+              The miles, the ridgelines, and the people I do it with.
             </p>
           </div>
-        </aside>
+
+          <aside class="patch" aria-label="Mission sheet">
+            <div class="patch-ring">
+              <img
+                src="images/profile.jpg"
+                alt="Luke Jaroszewski"
+                width="320"
+                height="320"
+              />
+            </div>
+            <p class="patch-name">Luke Jaroszewski</p>
+            <p class="patch-label">Mission sheet</p>
+            <dl class="sheet">
+              <div>
+                <dt>Role</dt>
+                <dd>On the trail</dd>
+              </div>
+              <div>
+                <dt>Origin</dt>
+                <dd>Austin</dd>
+              </div>
+              <div>
+                <dt>Trait</dt>
+                <dd>Miles</dd>
+              </div>
+              <div>
+                <dt>Crew</dt>
+                <dd>These people</dd>
+              </div>
+              <div>
+                <dt>Mission</dt>
+                <dd>Show up</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </header>
+
+      <section class="block" id="log">
+        <div class="wrap">
+          <header class="sec-head">
+            <span class="sec-num">01</span>
+            <h2 class="sec-kicker">Log</h2>
+            <p class="sec-sub">the long version</p>
+          </header>
+
+          <div class="log-grid">
+            <div class="prose">
+              <p class="lead">
+                Austin. Trails. Miles. People. That is the whole brief.
+              </p>
+              <p>
+                Weekdays I’m in Austin. The rest of the time I’m on a trail,
+                logging miles, or out with the crew. Movement keeps me
+                grounded, and this city gives me plenty of room to explore.
+              </p>
+              <p>
+                Seven miles and 4,900 feet in a day is a good Saturday.
+                Sometimes that’s above the clouds. Sometimes it’s Whitefish, a
+                first rodeo, Red River ’26, a beach sunset, or standing up as
+                best man and officiant. Always the people.
+              </p>
+            </div>
+
+            <aside class="telemetry" aria-label="Known coordinates">
+              <h3>Coordinates</h3>
+              <ul>
+                <li>
+                  <span>From</span>
+                  <strong>Austin</strong>
+                </li>
+                <li>
+                  <span>Haunts</span>
+                  <strong>Trails</strong>
+                </li>
+                <li>
+                  <span>A good Saturday</span>
+                  <strong>7 miles · 4,900 ft</strong>
+                </li>
+                <li>
+                  <span>Always</span>
+                  <strong>These people</strong>
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="block quiet" id="ground">
+        <div class="wrap">
+          <header class="sec-head">
+            <span class="sec-num">02</span>
+            <h2 class="sec-kicker">Ground</h2>
+            <p class="sec-sub">weekdays</p>
+          </header>
+          <p class="ground-note">
+            Weekdays: solutions engineering. The rest is this.
+          </p>
+          <p class="ground-aside">
+            I also work in solutions engineering, but this page isn’t that.
+          </p>
+        </div>
+      </section>
+
+      <section class="block" id="quests">
+        <div class="wrap">
+          <header class="sec-head">
+            <span class="sec-num">03</span>
+            <h2 class="sec-kicker">Side quests</h2>
+            <p class="sec-sub">off the clock</p>
+          </header>
+          <p class="quests-lede">
+            Hiking, Whitefish, a first rodeo, a wedding, a beach, the crew.
+          </p>
+
+          <div class="quest-grid">
+            <a
+              class="still"
+              href="https://www.instagram.com/p/DPoZVWAEUwB/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/ig-07.jpg"
+                alt="Luke sitting on a rocky summit above a sea of clouds"
+                width="1080"
+                height="1440"
+                fetchpriority="high"
+              />
+              <span class="cap">above the clouds.</span>
+            </a>
+
+            <a
+              class="still"
+              href="https://www.instagram.com/reel/DK_RaSbus5A/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/ig-10.jpg"
+                alt="Group hike on a mountain trail"
+                width="1080"
+                height="1920"
+                loading="lazy"
+              />
+              <span class="cap">7 miles. 4,900 ft.</span>
+            </a>
+
+            <a
+              class="still"
+              href="https://www.instagram.com/reel/DK7gtTAvxzJ/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/ig-12.jpg"
+                alt="Mountain biking in Whitefish, Montana"
+                width="720"
+                height="1280"
+                loading="lazy"
+              />
+              <span class="cap">Whitefish.</span>
+            </a>
+
+            <a
+              class="still"
+              href="https://www.instagram.com/reel/DUgRsp7jw3l/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/ig-04.jpg"
+                alt="Red River rodeo"
+                width="720"
+                height="1280"
+                loading="lazy"
+              />
+              <span class="cap">first rodeo.</span>
+            </a>
+
+            <a
+              class="still"
+              href="https://www.instagram.com/reel/DUiovDhDi-_/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/ig-03.jpg"
+                alt="Skiing at Red River in cowboy hats"
+                width="720"
+                height="1280"
+                loading="lazy"
+              />
+              <span class="cap">Red River ’26</span>
+            </a>
+
+            <a
+              class="still"
+              href="https://www.instagram.com/p/DMTGH_WA5tb/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/ig-09.jpg"
+                alt="Beach sunset with family"
+                width="1080"
+                height="1440"
+                loading="lazy"
+              />
+              <span class="cap">beach sunset.</span>
+            </a>
+
+            <a
+              class="still"
+              href="https://www.instagram.com/p/DU82GGMAcFI/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/ig-02.jpg"
+                alt="Luke officiating his brother's wedding"
+                width="1080"
+                height="1440"
+                loading="lazy"
+              />
+              <span class="cap">best man &amp; officiant.</span>
+            </a>
+
+            <a
+              class="still wide"
+              href="https://www.instagram.com/p/DVUkH5FAfzb/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/ig-01.jpg"
+                alt="Friends at the Barbarossa Trough"
+                width="1080"
+                height="608"
+                loading="lazy"
+              />
+              <span class="cap">Barbarossa Trough.</span>
+            </a>
+
+            <figure class="still">
+              <img
+                src="images/ig-05.jpg"
+                alt="Friends together at a ski resort"
+                width="1080"
+                height="1918"
+                loading="lazy"
+              />
+              <figcaption class="cap">the whole crew.</figcaption>
+            </figure>
+
+            <figure class="still">
+              <img
+                src="images/ig-08.jpg"
+                alt="Friends at a night out"
+                width="1080"
+                height="1281"
+                loading="lazy"
+              />
+              <figcaption class="cap">hat stays on.</figcaption>
+            </figure>
+
+            <figure class="still">
+              <img
+                src="images/ig-06.jpg"
+                alt="Friends celebrating with medals"
+                width="1080"
+                height="1440"
+                loading="lazy"
+              />
+              <figcaption class="cap">we showed up.</figcaption>
+            </figure>
+
+            <figure class="still">
+              <img
+                src="images/ig-11.jpg"
+                alt="Luke with family at a table"
+                width="1080"
+                height="1440"
+                loading="lazy"
+              />
+              <figcaption class="cap">these people.</figcaption>
+            </figure>
+          </div>
+
+          <aside class="strava-line" id="strava-note">
+            <p class="strava-kicker">Lately on Strava</p>
+            <div id="strava-feed">
+              <p>
+                The miles live
+                <a
+                  href="https://strava.app.link/O4lWutDeKTb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >over here</a
+                >.
+              </p>
+            </div>
+          </aside>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p class="tiny-job">Weekdays: solutions engineering. The rest is this.</p>
-      <p>© <span id="year"></span> Luke Jaroszewski</p>
+      <div class="wrap foot-row">
+        <p class="tiny-job">
+          Weekdays: solutions engineering. The rest is this.
+        </p>
+        <p>© <span id="year"></span> Luke Jaroszewski</p>
+      </div>
     </footer>
 
     <script src="script.js"></script>
