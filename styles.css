@@ -582,11 +582,7 @@ h1 .family {
   }
 
   .quest-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .still.wide {
-    grid-column: span 2;
+    gap: 1.6rem;
   }
 }
 
