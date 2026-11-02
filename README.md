@@ -18,10 +18,10 @@ Personal website for [lukejaros.com](https://lukejaros.com).
 
 ## Structure
 
-- `index.html` — main page
+- `index.html` — name and social links
 - `styles.css` — site styles
-- `script.js` — client-side behavior and Strava feed
-- `data/strava-activities.json` — cached Strava activities (auto-updated)
+- `404.html` — not found page
+- `data/strava-activities.json` — cached Strava activities (auto-updated; not shown on the homepage)
 - `_headers` / `_redirects` / `wrangler.toml` — Cloudflare Pages config
 - `deploy/` — previous Mac mini hosting setup (Caddy, scripts)
 
@@ -70,7 +70,7 @@ You can stop the Mac mini runner and ignore [deploy/MAC-MINI-SETUP.md](deploy/MA
 
 ## Strava live feed
 
-The site shows your latest Strava activities and refreshes every 5 minutes.
+The homepage no longer shows a Strava feed. The sync job still refreshes `data/strava-activities.json`.
 
 ### 1. Create a Strava API app
 
