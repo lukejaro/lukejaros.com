@@ -18,11 +18,12 @@ Personal website for [lukejaros.com](https://lukejaros.com).
 
 ## Structure
 
-- `index.html` — main page
+- `index.html` — the page: name and social links
 - `styles.css` — site styles
-- `script.js` — client-side behavior and Strava feed
-- `data/strava-activities.json` — cached Strava activities (auto-updated)
-- `_headers` / `_redirects` / `wrangler.toml` — Cloudflare Pages config
+- `404.html` — not found page
+- `_headers` / `_redirects` — response headers and the www redirect
+- `.well-known/appspecific/com.tesla.3p.public-key.pem` — Tesla Fleet API public key
+- `wrangler.toml` — Cloudflare Pages config
 - `deploy/` — previous Mac mini hosting setup (Caddy, scripts)
 
 ## Hosting on Cloudflare Pages
@@ -67,43 +68,3 @@ Until nameservers finish propagating, `*.pages.dev` is live.
 ### After cutover
 
 You can stop the Mac mini runner and ignore [deploy/MAC-MINI-SETUP.md](deploy/MAC-MINI-SETUP.md). `.github/workflows/deploy.yml` still deploys to the mini until you delete it — leave it until DNS is on Cloudflare so the old host stays as a fallback.
-
-## Strava live feed
-
-The site shows your latest Strava activities and refreshes every 5 minutes.
-
-### 1. Create a Strava API app
-
-1. Go to https://www.strava.com/settings/api
-2. Create an application
-3. Set **Authorization Callback Domain** to `localhost` for local testing
-
-### 2. Get a refresh token
-
-Open this URL (replace `YOUR_CLIENT_ID`):
-
-```
-https://www.strava.com/oauth/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=http://localhost&approval_prompt=force&scope=activity:read_all
-```
-
-Exchange the returned `code` for tokens:
-
-```bash
-curl -X POST https://www.strava.com/oauth/token \
-  -F client_id=YOUR_CLIENT_ID \
-  -F client_secret=YOUR_CLIENT_SECRET \
-  -F code=YOUR_CODE \
-  -F grant_type=authorization_code
-```
-
-Save the `refresh_token` from the response.
-
-### 3. Add GitHub secrets
-
-In the repo settings, add:
-
-- `STRAVA_CLIENT_ID`
-- `STRAVA_CLIENT_SECRET`
-- `STRAVA_REFRESH_TOKEN`
-
-The `Sync Strava activities` GitHub Action updates `data/strava-activities.json` every 15 minutes on `main`.
